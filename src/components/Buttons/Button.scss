@@ -1,0 +1,281 @@
+/*
+
+
+    Buttons
+
+
+*/
+
+
+
+/* -------------------------------------
+
+    Imports
+
+------------------------------------- */
+
+@import "../Styles/core.scss";
+
+
+/* -------------------------------------
+
+    Variables
+
+------------------------------------- */
+
+// Animation Timing
+$btn-anim-timing: 200ms;
+
+// Large
+$btn-height:      40px !default;
+$btn-icon-size:   40px !default;
+$btn-font-size:   12px !default;
+
+// Small
+$btn-small-height:      32px !default;
+$btn-icon-small-size:   32px !default;
+$btn-small-font-size:   10px !default;
+
+
+/* -------------------------------------
+
+    Mixins
+
+------------------------------------- */
+
+@mixin button-setter(
+    $width: auto,
+    $height: $btn-height,
+    $side-padding: 16px,
+    $mode: normal
+) {
+    // Size
+    width: $width;
+    height: $height;
+    // Appearance
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    // Padding
+    @if $mode == normal {
+        text-align: center;
+        padding: 0 $side-padding;
+    }
+    @else if $mode == left {
+        text-align: left;
+        padding: 0 $side-padding 0 $height;
+    }
+    @else if $mode == right {
+        text-align: right;
+        padding: 0 $height 0 $side-padding;
+    }
+    @else if $mode == icon {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+
+/* -------------------------------------
+
+    Button Styles
+
+------------------------------------- */
+
+// Base Class
+.btn {
+    font-weight: 600;
+    line-height: 1;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:disabled { pointer-events: none; }
+}
+
+.btn.solid {
+    color: white;
+    background-color: $color-nav;
+    @include transition($prop: background-color, $timing: $btn-anim-timing);
+    &:hover {
+        background-color: $color-nav-hover;
+    }
+    &:disabled {
+        background-color: $color-gray-D00;
+    }
+}
+
+.btn.line {
+    color: $color-nav;
+    outline: solid 1px $color-gray-D00;
+    @include transition($prop: color, $timing: $btn-anim-timing);
+    &:hover {
+        color: $color-nav-hover;
+        outline-width: 2px;
+    }
+    &:disabled {
+        color: $color-gray-D00;
+        outline-color: $color-gray-D00;
+    }
+    &.icon-text {
+        color: $color-gray-400;
+        i { color: $color-nav; }
+        &:hover i { color: $color-nav-hover; }
+    }
+}
+
+.btn.quiet {
+    color: $color-gray-400;
+    transition: color $btn-anim-timing ease-in-out,
+                background-color $btn-anim-timing ease-in-out;
+    &:hover {
+        color: $color-nav-hover;
+        background-color: rgba($color-nav-hover, 0.10);
+    }
+    &:disabled {
+        color: $color-gray-D00;
+    }
+    &.icon-text {
+        color: $color-gray-400;
+        i { color: $color-nav; }
+        &:hover i { color: $color-nav-hover; }
+    }
+}
+
+.btn.no-effect {
+    color: $color-gray-400;
+}
+
+
+/* -------------------------------------
+
+    Button Types
+
+------------------------------------- */
+
+.btn {
+    font-size: $btn-font-size;
+    @include button-setter($mode: normal);
+}
+
+.btn.link {
+    line-height: $btn-height;
+    &.line {
+        line-height: $btn-height;
+        &:hover { line-height: $btn-height; }
+    }
+    &.small {
+        line-height: $btn-small-height;
+        &.line {
+            line-height: $btn-small-height;
+            &:hover { line-height: $btn-small-height; }
+        }
+    }
+    &.icon i,
+    &.icon img {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+}
+
+.btn.small {
+    font-size: $btn-small-font-size;
+    @include button-setter($height: $btn-small-height, $mode: normal);
+}
+
+.btn.icon {
+    @include button-setter($width: 64px, $height: 64px, $mode: icon);
+    img {
+       width: auto;
+       height: 20px;
+       display: inline-block;
+    }
+    i, img {
+        vertical-align: middle;
+    }
+}
+
+.btn.circle {
+    @include round-corners($value: 50%);
+}
+
+.btn.icon-text {
+    &.icon-left {
+        @include button-setter($mode: left);
+        i {
+            top: 0;
+            left: 0;
+        }
+    }
+    &.icon-right {
+        @include button-setter($mode: right);
+        i {
+            top: 0;
+            right: 0;
+        }
+    }
+    &.line i {
+        height: $btn-icon-size;
+        line-height: $btn-icon-size;
+    }
+    &.line:hover i {
+        height: $btn-icon-size;
+        line-height: $btn-icon-size;
+    }
+    i {
+        width: $btn-icon-size;
+        height: $btn-icon-size;
+        line-height: $btn-icon-size;
+        text-align: center;
+        display: block;
+        position: absolute;
+    }
+    span {
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
+.btn.icon-text.small {
+    &.icon-left {
+        @include button-setter($height: $btn-small-height, $mode: left);
+        i {
+            top: 0;
+            left: 0;
+        }
+    }
+    &.icon-right {
+        @include button-setter($height: $btn-small-height, $mode: right);
+        i {
+            top: 0;
+            right: 0;
+        }
+    }
+    &.line i {
+        height: $btn-icon-small-size;
+        line-height: $btn-icon-small-size;
+    }
+    &.line:hover i {
+        height: $btn-icon-small-size;
+        line-height: $btn-icon-small-size;
+    }
+    i {
+        width: $btn-icon-small-size;
+        height: $btn-icon-small-size;
+        font-size: 16px;
+        line-height: $btn-icon-small-size;
+        text-align: center;
+        display: block;
+        position: absolute;
+    }
+    span {
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
