@@ -34,4 +34,10 @@ module.exports = {
   testPathIgnorePatterns: [
     "/node_modules/"
   ],
+  
+  // Babel Transform
+  transform: {
+    '^.+\\.jsx$': 'babel-jest',
+    '^.+\\.js$': 'babel-jest'
+  },
 };
