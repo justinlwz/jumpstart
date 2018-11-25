@@ -1,13 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 
 import Button from './Button';
 
-test('Button component mounts properly', () => {
-    const wrapper = renderer.create(
-        <Button onClick={ () => {alert('clicked!');} } type="solid">Click Me!</Button>
-    );
+describe('<Button/>', () => {
+    it('Button component mounts the DOM and renders properly', () => {
+        const wrapper = mount(
+            <Button onClick={() => { alert('clicked!'); }} type="solid">Click Me!</Button>
+        );
 
-    let tree = wrapper.toJSON();
-    expect(tree).toMatchSnapshot();
+        expect(wrapper.length).toBe(1);
+    });
 });
