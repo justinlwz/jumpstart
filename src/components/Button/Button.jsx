@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import ButtonStyle from './Style.jsx';
+import ButtonStyle from './Button.style';
 
 class Button extends Component {
 

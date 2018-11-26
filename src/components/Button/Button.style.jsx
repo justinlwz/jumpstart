@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ButtonStyle = styled.button`
     font-weight: 600;
-    line-height: 1;
+    line-height: ${props => props.href ? "initial" : "1"}
     position: relative;
     cursor: pointer;
     outline: none;
