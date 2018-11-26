@@ -21,7 +21,8 @@
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "styled-components": "^4.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
@@ -30,6 +31,7 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^4.0.8",
+    "@storybook/addon-centered": "^4.0.8",
     "@storybook/addon-links": "^4.0.8",
     "@storybook/addons": "^4.0.8",
     "@storybook/react": "^4.0.8",
@@ -45,6 +47,7 @@
     "prettier": "^1.15.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-test-renderer": "^16.6.3"
+    "react-test-renderer": "^16.6.3",
+    "styled-components": "^4.1.1"
   }
 }

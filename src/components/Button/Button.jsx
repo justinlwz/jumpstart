@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import ButtonStyle from './Style.jsx';
 
 class Button extends Component {
 
@@ -41,16 +42,21 @@ class Button extends Component {
         // Create Element
         if (href) {
             return(
-                <a {...filteredProps} href={href} rel="noreferrer noopener">
+                <ButtonStyle 
+                    as="a"
+                    href={href} 
+                    rel="noreferrer noopener"
+                    {...filteredProps}
+                >
                     {children}
-                </a>
+                </ButtonStyle>
             );
         }
         else {
             return (
-                <button {...filteredProps}>
+                <ButtonStyle as="button" {...filteredProps}>
                     {children}
-                </button>
+                </ButtonStyle>
             );
         }
     }
