@@ -9,4 +9,4 @@
 
 ---
 
-A boilerplate to help kickstart Design System implementation and skip some of the initial setup.
+A Storybook boilerplate to help kickstart Design System implementation and skip some of the initial setup. Storybook is a development environment that helps you build, view and test each component interactively.
