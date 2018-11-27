@@ -9,6 +9,7 @@
     "react"
   ],
   "main": "build/index.js",
+  "files": ["/build"],
   "scripts": {
     "test": "ava",
     "start": "start-storybook -p 6006",
