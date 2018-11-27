@@ -9,20 +9,24 @@
     "react"
   ],
   "main": "build/index.js",
-  "files": ["/build"],
+  "files": [
+    "/build"
+  ],
   "scripts": {
     "test": "ava",
     "start": "start-storybook -p 6006",
     "build": "babel src --out-dir build --ignore '**/stories','**/test' --source-maps inline",
+    "build-commonjs": "babel src --out-dir build --ignore '**/stories','**/test' --source-maps inline",
     "build-storybook": "build-storybook",
-    "clean": "git clean -Xdf -i",
+    "build-assets": "gulp assets",
+    "clean": "gulp clean",
     "release": "np --no-publish"
   },
   "repository": {
     "type": "git",
     "url": "git+https://justinlwz@github.com/justinlwz/storybook-boilerplate.git"
   },
-  "author": "",
+  "author": "Justin Lim (http://justinlim.xyz/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/justinlwz/storybook-boilerplate/issues"
@@ -56,12 +60,15 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "gulp": "^3.9.1",
+    "gulp-svgmin": "^2.1.0",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-test-renderer": "^16.6.3",
+    "rimraf": "^2.6.2",
     "styled-components": "^4.1.1"
   },
   "ava": {
