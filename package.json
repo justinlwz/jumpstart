@@ -1,6 +1,6 @@
 {
   "name": "storybook-boilerplate",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A boilerplate to help kickstart Design System implementation and skip some of the initial setup.",
   "keywords": [
     "design system",
