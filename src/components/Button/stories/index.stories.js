@@ -7,13 +7,13 @@ import centered from '@storybook/addon-centered';
 import { Button } from '..';
 
 storiesOf('Button', module)
-  .addDecorator(centered)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with link', () => <Button href="http://google.com/" onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+	.addDecorator(centered)
+	.add('Normal', () => (
+		<Button type="solid" onClick={action('clicked')}>Hello Button</Button>
+	))
+	.add('Link', () => (
+		<Button type="solid" href="http://google.com/" target="_blank" onClick={action('clicked')}>Hello Button</Button>
+	))
+	.add('Disabled', () => (
+		<Button type="solid" onClick={action('clicked')} disabled>Hello Button</Button>
+	))

@@ -13,7 +13,8 @@
     "test": "ava",
     "start": "start-storybook -p 6006",
     "build": "babel src --out-dir build --ignore '**/stories','**/test' --source-maps inline",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "clean": "git clean -Xdf -i"
   },
   "repository": {
     "type": "git",
