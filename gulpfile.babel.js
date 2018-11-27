@@ -45,5 +45,5 @@ gulp.task('assets', () => {
 
 // Clean Directory
 gulp.task('clean', (cb) => {
-    rimraf(paths.destination + '/*', cb);
+    rimraf(paths.destination, cb);
 });

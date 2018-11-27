@@ -15,10 +15,10 @@
   "scripts": {
     "test": "ava",
     "start": "start-storybook -p 6006",
-    "build": "babel src --out-dir build --ignore '**/stories','**/test' --source-maps inline",
+    "build": "npm run clean && npm run build-commonjs && npm run build-assets",
+    "build-assets": "gulp assets",
     "build-commonjs": "babel src --out-dir build --ignore '**/stories','**/test' --source-maps inline",
     "build-storybook": "build-storybook",
-    "build-assets": "gulp assets",
     "clean": "gulp clean",
     "release": "np --no-publish"
   },
