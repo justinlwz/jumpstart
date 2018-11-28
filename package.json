@@ -15,17 +15,14 @@
   "scripts": {
     "test": "ava",
     "start": "start-storybook -p 6006",
-    "build": "npm run clean && npm run build-commonjs && npm run build-assets",
+    "build": "npm run clean && concurrently --names 'commonjs,assets' 'npm run build-commonjs' 'npm run build-assets'",
     "build-assets": "gulp assets",
     "build-commonjs": "babel src --out-dir build --ignore '**/stories','**/test' --source-maps inline",
     "build-storybook": "build-storybook",
     "clean": "gulp clean",
     "release": "np --no-publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://justinlwz@github.com/justinlwz/storybook-boilerplate.git"
-  },
+  "repository": "git+https://justinlwz@github.com/justinlwz/storybook-boilerplate.git",
   "author": "Justin Lim (http://justinlim.xyz/)",
   "license": "MIT",
   "bugs": {
@@ -53,6 +50,7 @@
     "@storybook/react": "^4.0.8",
     "ava": "1.0.0-rc.2",
     "babel-loader": "^8.0.4",
+    "concurrently": "^4.1.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "eslint": "^5.9.0",
