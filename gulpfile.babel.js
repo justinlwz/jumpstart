@@ -9,7 +9,7 @@
 
 
 // Plugins
-import gulp from 'gulp';
+import { task, src, dest } from 'gulp';
 import svgmin from 'gulp-svgmin';
 import rimraf from 'rimraf';
 
@@ -20,9 +20,8 @@ const paths = {
 };
 
 // SVG Processing
-gulp.task('assets', () => {
+task('assets', () => {
 
-    // TODO Debug Optimizer Options
     const minifyOptions = {
         plugins: [
             { cleanupIDs: false },
@@ -33,17 +32,17 @@ gulp.task('assets', () => {
     };
 
     // SVG
-    gulp.src('src/**/*.svg')
+    return src('src/**/*.svg')
         .pipe(svgmin(minifyOptions))
-        .pipe(gulp.dest(paths.destination));
+        .pipe(dest(paths.destination));
     
     // PNG, JPEG
-    gulp.src('src/**/*.+(png|jpeg|jpg)')
-        .pipe(gulp.dest(paths.destination));
+    return src('src/**/*.+(png|jpeg|jpg)')
+        .pipe(dest(paths.destination));
     
 });
 
 // Clean Directory
-gulp.task('clean', (cb) => {
+task('clean', (cb) => {
     rimraf(paths.destination, cb);
 });
