@@ -1,11 +1,27 @@
-import { configure } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
+import { configure, addDecorator } from '@storybook/react'
+import { setOptions } from '@storybook/addon-options'
+import { withInfo } from '@storybook/addon-info'
 
 // automatically import all files ending in *.stories.js
-const req = require.context('../src', true, /.stories.js$/);
+const req = require.context('../src', true, /.stories.js$/)
 function loadStories() {
-  req.keys().forEach(filename => req(filename));
+  req.keys().forEach(filename => req(filename))
 }
+
+// Info defaults
+addDecorator(withInfo({
+  header: false,
+  styles: {
+    button: {
+      topRight: {
+        top: 0,
+        left: 0,
+        right: 'initial',
+        borderRadius: '0 0 5px 0',
+      },
+    }
+  }
+}))
 
 // Option defaults:
 setOptions({
@@ -73,4 +89,4 @@ setOptions({
   selectedAddonPanel: undefined // The order of addons in the "Addons Panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook
 })
 
-configure(loadStories, module);
+configure(loadStories, module)
