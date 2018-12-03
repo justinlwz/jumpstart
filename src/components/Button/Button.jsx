@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import ButtonStyle from './Button.style';
+import ButtonStyle from './Button.style'
 
 class Button extends Component {
 
@@ -19,15 +19,15 @@ class Button extends Component {
             '_self',
             '_top',
         ]),
-    };
+    }
 
     _handleClick = (e) => {
-        const { disabled, onClick } = this.props;
+        const { disabled, onClick } = this.props
         if (disabled) {
-            e.preventDefault();
-            return;
+            e.preventDefault()
+            return
         }
-        if (onClick) onClick(e);
+        if (onClick) onClick(e)
     }
 
     render() {
@@ -37,7 +37,7 @@ class Button extends Component {
             children,
             href,
             ...filteredProps
-        } = this.props;
+        } = this.props
 
         // Create Element
         if (href) {
@@ -50,16 +50,16 @@ class Button extends Component {
                 >
                     {children}
                 </ButtonStyle>
-            );
+            )
         }
         else {
             return (
                 <ButtonStyle as="button" {...filteredProps}>
                     {children}
                 </ButtonStyle>
-            );
+            )
         }
     }
-};
+}
 
-export default Button;
+export default Button

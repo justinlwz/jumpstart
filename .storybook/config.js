@@ -1,4 +1,5 @@
 import { configure } from '@storybook/react';
+import { setOptions } from '@storybook/addon-options';
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /.stories.js$/);

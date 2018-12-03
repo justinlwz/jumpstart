@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 const ButtonStyle = styled.button`
     height: ${props => props.small ? "24px" : "32px"};
@@ -35,6 +35,6 @@ const ButtonStyle = styled.button`
         }
     `}
 
-`;
+`
 
-export default ButtonStyle;
+export default ButtonStyle
