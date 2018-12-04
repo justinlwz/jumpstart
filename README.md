@@ -20,11 +20,11 @@ yarn start
 
 ## Technologies
 
-| Framework                                               | Description                                       |                                                                                                                   |
-| ------------------------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| [React](https://reactjs.org/)                           | Frontend Javascript Library                       | [![React](https://img.shields.io/npm/dm/react.svg)](https://github.com/facebook/react)                            |
-| [Storybook](https://storybook.js.org/)                  | UI Development Environment                        | [![Storybook](https://img.shields.io/npm/dm/storybook.svg)](https://github.com/storybooks/storybook)              |
-| [Styled Components](https://www.styled-components.com/) | Styling components in ES6                         | [![Styled Components](https://img.shields.io/npm/dm/styled-components.svg)](https://github.com/styled-components) |
-| [AVA](https://github.com/avajs/ava)                     | Test Runner                                       | [![AVA](https://img.shields.io/npm/dm/ava.svg)](https://github.com/avajs/ava)                                     |
-| [Enzyme](https://airbnb.io/enzyme/)                     | Structural & Snapshot Testing                     | [![Enzyme](https://img.shields.io/npm/dm/enzyme.svg)](https://github.com/airbnb/enzyme/)                          |
-| [NP](https://github.com/sindresorhus/np)                | NPM & Yarn Publishing Manager                     | [![NP](https://img.shields.io/npm/dm/np.svg)](https://github.com/sindresorhus/np)                                 |
+| Framework                                               | Description                   |                                                                                                                   |
+| ------------------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| [React](https://reactjs.org/)                           | Frontend Javascript Library   | [![React](https://img.shields.io/npm/dm/react.svg)](https://github.com/facebook/react)                            |
+| [Storybook](https://storybook.js.org/)                  | UI Development Environment    | [![Storybook](https://img.shields.io/npm/dm/storybook.svg)](https://github.com/storybooks/storybook)              |
+| [Styled Components](https://www.styled-components.com/) | Styling components in ES6     | [![Styled Components](https://img.shields.io/npm/dm/styled-components.svg)](https://github.com/styled-components) |
+| [AVA](https://github.com/avajs/ava)                     | Test Runner                   | [![AVA](https://img.shields.io/npm/dm/ava.svg)](https://github.com/avajs/ava)                                     |
+| [Enzyme](https://airbnb.io/enzyme/)                     | Structural & Snapshot Testing | [![Enzyme](https://img.shields.io/npm/dm/enzyme.svg)](https://github.com/airbnb/enzyme/)                          |
+| [NP](https://github.com/sindresorhus/np)                | NPM & Yarn Publishing Manager | [![NP](https://img.shields.io/npm/dm/np.svg)](https://github.com/sindresorhus/np)                                 |
