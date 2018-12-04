@@ -7,7 +7,7 @@ import { withInfo } from '@storybook/addon-info'
 import centered from '@storybook/addon-centered'
 
 import { Button } from '..'
-import GlobalStyle from '../../Style/Global.style'
+import GlobalStyle from '../../Styles/Global'
 
 const typeOptions = {
 	Normal: 'normal', 

@@ -7,4 +7,19 @@
 
 ---
 
-A Storybook boilerplate to help kickstart Design System implementation and skip some of the initial setup. Storybook is a development environment that helps you build, view and test each component interactively.
+**Kickstart your Design System implementation and skip some of the initial setup with Jumpstart.**
+Jumpstart is a Storybook boilerplate -- a development environment that helps you build, view and test each component interactively.
+
+## Install Global Packages & Dependencies:
+
+### Yarn
+```bash
+yarn global add np
+yarn install
+```
+
+### NPM
+```bash
+npm install -g np
+npm install
+```
