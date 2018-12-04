@@ -8,21 +8,6 @@ function loadStories() {
   req.keys().forEach(filename => req(filename))
 }
 
-// Info defaults
-addDecorator(withInfo({
-  header: false,
-  styles: {
-    button: {
-      topRight: {
-        top: 0,
-        left: 0,
-        right: 'initial',
-        borderRadius: '0 0 5px 0',
-      },
-    }
-  }
-}))
-
 // Option defaults:
 setOptions({
   /**

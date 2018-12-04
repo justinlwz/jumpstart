@@ -8,10 +8,15 @@ class Button extends Component {
     // PropTypes
     static propTypes = {
         children: PropTypes.node,
-        className: PropTypes.string,
-        disabled: PropTypes.bool,
-        onClick: PropTypes.func,
+        type: PropTypes.oneOf(['normal', 'quiet', 'no-effect']),
+        radius: PropTypes.number,
         small: PropTypes.bool,
+        disabled: PropTypes.bool,
+    }
+
+    static defaultProps = {
+        type: 'normal',
+        radius: 3
     }
 
     _handleClick = (e) => {
@@ -27,7 +32,7 @@ class Button extends Component {
 
         // Props
         const {
-            children
+            children,
             ...filteredProps
         } = this.props
 
