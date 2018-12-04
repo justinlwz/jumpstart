@@ -10,11 +10,17 @@
 
 Kickstart your Design System implementation and skip some of the initial setup with Jumpstart, a Storybook development environment that helps you build, view and test each component interactively.
 
-## Install Global Packages & Start:
+## Getting Started:
+
+Install global packages and dependencies:
 
 ```bash
 yarn global add np
 yarn install
+```
+
+Starts Storyboard:
+```bash
 yarn start
 ```
 
