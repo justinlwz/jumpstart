@@ -10,15 +10,8 @@ class Button extends Component {
         children: PropTypes.node,
         className: PropTypes.string,
         disabled: PropTypes.bool,
-        href: PropTypes.string,
         onClick: PropTypes.func,
         small: PropTypes.bool,
-        target: PropTypes.oneOf([
-            '_blank',
-            '_parent',
-            '_self',
-            '_top',
-        ]),
     }
 
     _handleClick = (e) => {
@@ -34,31 +27,15 @@ class Button extends Component {
 
         // Props
         const {
-            children,
-            href,
+            children
             ...filteredProps
         } = this.props
 
-        // Create Element
-        if (href) {
-            return(
-                <ButtonStyle 
-                    as="a"
-                    href={href} 
-                    rel="noreferrer noopener"
-                    {...filteredProps}
-                >
-                    {children}
-                </ButtonStyle>
-            )
-        }
-        else {
-            return (
-                <ButtonStyle as="button" {...filteredProps}>
-                    {children}
-                </ButtonStyle>
-            )
-        }
+        return (
+            <ButtonStyle as="button" {...filteredProps}>
+                {children}
+            </ButtonStyle>
+        )
     }
 }
 
