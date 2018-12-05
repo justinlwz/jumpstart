@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import { 
@@ -9,7 +9,7 @@ import {
     CheckStyle 
 } from './Checkbox.style'
 
-class Checkbox extends Component {
+class Checkbox extends PureComponent {
 
     // PropTypes
     static propTypes = {

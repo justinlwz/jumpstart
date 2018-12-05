@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import ButtonStyle from './Button.style'
 
-class Button extends Component {
+class Button extends PureComponent {
 
     // PropTypes
     static propTypes = {
