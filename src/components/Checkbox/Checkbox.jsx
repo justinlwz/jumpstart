@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { CheckboxStyle, InputStyle, LabelStyle } from './Checkbox.style'
+import { 
+    CheckboxStyle, 
+    InputStyle, 
+    LabelStyle, 
+    BoxStyle, 
+    CheckStyle 
+} from './Checkbox.style'
 
 class Checkbox extends Component {
 
@@ -74,9 +80,12 @@ class Checkbox extends Component {
                        debug={debug}
                        onChange={this.handleChange}
                 />
-                <LabelStyle as="label" htmlFor={label} labelPosition={labelPosition}>
+                <LabelStyle as="label" htmlFor={label}>
                     {label}
                 </LabelStyle>
+                <BoxStyle labelPosition={labelPosition}>
+                    <CheckStyle>✓</CheckStyle>
+                </BoxStyle>
             </CheckboxStyle>
         )
     }
