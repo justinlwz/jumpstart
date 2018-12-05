@@ -9,17 +9,9 @@
 
 
 export function radius({
-    universal = true,
     value = '3px',
-    topLeft = '3px',
-    topRight = '3px',
-    bottomLeft = '3px',
-    bottomRight = '3px'
 }) {
-    if (universal) {
-        return `border-radius: ${value};`
-    }
-    return `border-radius: ${topLeft} ${topRight} ${bottomRight} ${bottomLeft};`
+    return `border-radius: ${value};`
 }
 
 export function card() {
