@@ -7,15 +7,19 @@ class Checkbox extends Component {
 
     // PropTypes
     static propTypes = {
-        disabled: PropTypes.bool,
         name: PropTypes.string,
         label: PropTypes.string.isRequired,
+        labelPosition: PropTypes.oneOf(['left', 'right']),
+        disabled: PropTypes.bool,
         onChange: PropTypes.func,
+        debug: PropTypes.bool,
     }
 
     static defaultProps = {
+        labelPosition: 'right',
         checked: false,
         disabled: false,
+        debug: false,
         value: false,
     }
 
@@ -44,9 +48,11 @@ class Checkbox extends Component {
 
         // Props
         const {
-            disabled,
             name,
             label,
+            labelPosition,
+            disabled,
+            debug,
         } = this.props
 
         // State
@@ -65,9 +71,10 @@ class Checkbox extends Component {
                        value={value}
                        name={name}
                        disabled={disabled}
+                       debug={debug}
                        onChange={this.handleChange}
                 />
-                <LabelStyle as="label" htmlFor={label}>
+                <LabelStyle as="label" htmlFor={label} labelPosition={labelPosition}>
                     {label}
                 </LabelStyle>
             </CheckboxStyle>

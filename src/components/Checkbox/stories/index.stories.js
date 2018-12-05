@@ -9,6 +9,10 @@ import centered from '@storybook/addon-centered'
 import { Checkbox } from '..'
 import GlobalStyle from '../../Styles/Global'
 
+const labelPosition = {
+	Left: 'left', 
+	Right: 'right',
+};
 
 storiesOf('Checkbox', module)
 	.addDecorator(withInfo({
@@ -31,8 +35,10 @@ storiesOf('Checkbox', module)
 			<GlobalStyle />
 			<Checkbox 
 				label={text('Label Text', 'Choice 1')}
-				disabled={boolean('Disabled', false)}
+				labelPosition={select('Label Position', labelPosition, 'right')}
 				checked={boolean('Checked', false)}
+				disabled={boolean('Disabled', false)}
+				debug={boolean('Debug', false)}
 				onChange={action('changed')}
 			/>
 		</Fragment>
