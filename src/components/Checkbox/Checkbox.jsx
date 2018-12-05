@@ -80,12 +80,12 @@ class Checkbox extends Component {
                        debug={debug}
                        onChange={this.handleChange}
                 />
+                <BoxStyle as="div" labelPosition={labelPosition}>
+                    <CheckStyle as="div">✓</CheckStyle>
+                </BoxStyle>
                 <LabelStyle as="label" htmlFor={label}>
                     {label}
                 </LabelStyle>
-                <BoxStyle labelPosition={labelPosition}>
-                    <CheckStyle>✓</CheckStyle>
-                </BoxStyle>
             </CheckboxStyle>
         )
     }

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { radius, transition } from '../../components/Styles/StyleUtils/Mixins.style'
 import { navActive, gray100, gray600, grayD00, grayF00 } from '../../components/Styles/StyleUtils/Colours.style'
 
@@ -10,7 +10,6 @@ export const CheckboxStyle = styled.div`
 
 export const InputStyle = styled.input`
     top: 24px;
-    left: 28px;
     position: absolute;
     display: ${props => props.debug ? "block" : "none"};
 `
@@ -22,30 +21,6 @@ export const LabelStyle = styled.label`
     cursor: pointer;
     color: ${gray100};
     ${transition({prop:'color', timing:'100ms'})}
-    /* :before {
-        content: " ";
-        width: 16px;
-        height: 16px;
-        margin-right: ${props => props.labelPosition == 'right' ? '8px' : 0};
-        margin-left: ${props => props.labelPosition == 'right' ? 0 : '8px'};
-        order: ${props => props.labelPosition == 'right' ? 0 : 1};
-        border: solid 1px ${gray600};
-        background-color: ${grayF00};
-        ${radius({value:'2px'})}
-        ${transition({prop:'all', timing:'100ms'})}
-    }
-    :after {
-        content: "✓";
-        ${props => props.labelPosition == 'left' && css`
-            right: 0;
-        `}
-        position: absolute;
-        font-size: 14px;
-        text-align: center;
-        width: 16px;
-        line-height: 16px;
-        color: transparent;
-    } */
     ${InputStyle}:checked ~ & {
         color: ${navActive};
     }
@@ -61,10 +36,10 @@ export const LabelStyle = styled.label`
 export const BoxStyle = styled.div`
     width: 16px;
     height: 16px;
-    margin-left: ${props => props.labelPosition == 'right' ? '8px' : 0};
-    margin-right: ${props => props.labelPosition == 'right' ? 0 : '8px'};
+    margin-right: ${props => props.labelPosition == 'right' ? '8px' : 0};
+    margin-left: ${props => props.labelPosition == 'right' ? 0 : '8px'};
     position: relative;
-    order: ${props => props.labelPosition == 'right' ? 0 : -1};
+    order: ${props => props.labelPosition == 'right' ? 0 : 1};
     border: solid 1px ${gray600};
     background-color: ${grayF00};
     ${radius({value:'2px'})}

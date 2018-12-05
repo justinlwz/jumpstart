@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { RadioStyle, InputStyle, LabelStyle } from './Radio.style'
+import { 
+    RadioStyle, 
+    InputStyle, 
+    LabelStyle,
+    CircleStyle,
+    MarkStyle
+} from './Radio.style'
 
 class Radio extends Component {
 
@@ -74,6 +80,9 @@ class Radio extends Component {
                        debug={debug}
                        onChange={this.handleChange}
                 />
+                <CircleStyle as="div" labelPosition={labelPosition}>
+                    <MarkStyle as="div" />
+                </CircleStyle>
                 <LabelStyle as="label" htmlFor={label} labelPosition={labelPosition}>
                     {label}
                 </LabelStyle>
