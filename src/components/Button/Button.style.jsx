@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components'
+import { transition } from '../../components/Styles/StyleUtils/Mixins.style'
+import { nav, navActive, disabled } from '../../components/Styles/StyleUtils/Colours.style'
 
 const ButtonStyle = styled.button`
     height: ${props => props.small ? "24px" : "32px"};
     font-size: ${props => props.small ? "12px" : "14px"};
     font-weight: 600;
     line-height: ${props => props.small ? "24px" : "32px"};
-    display: inline-block;
     position: relative;
     cursor: pointer;
     padding: ${props => props.small ? "0 8px" : "0 16px"};
@@ -13,7 +14,7 @@ const ButtonStyle = styled.button`
     outline: none;
     border: none;
     text-decoration: none;
-    transition: all 150ms ease-in-out;
+    ${transition({timing:'150ms'})}
 
     /* Disabled Style */
     :disabled {  pointer-events: none; }
@@ -21,24 +22,24 @@ const ButtonStyle = styled.button`
     /* Button Type */
     ${props => props.type == 'normal' && css`
         color: white;
-        background-color: #13A1E4;
+        background-color: ${nav};
         :hover {
-            background-color: #006187;
+            background-color: ${navActive};
         }
         :disabled {
-            background-color: #D9DADB;
+            background-color: ${disabled};
         }
     `}
 
     ${props => props.type == 'quiet' && css`
-        color: #13A1E4;
+        color: ${nav};
         background-color: transparent;
         :hover {
-            color: #006187;
+            color: ${navActive};
             background-color: rgba(19, 161, 228, 0.05);
         }
         :disabled {
-            color: #D9DADB;
+            color: ${disabled};
         }
     `}
 

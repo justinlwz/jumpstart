@@ -2,10 +2,10 @@ import test from 'ava'
 import React from 'react'
 import render from 'react-test-renderer'
 
-import { Button } from '..'
+import { Checkbox } from '..'
 
-test('Button component mounts properly', t => {
-    const component = <Button type="normal">Click Me!</Button>
+test('Checkbox component mounts properly', t => {
+    const component = <Checkbox label='Choice 1'/>
     const tree = render.create(component).toJSON()
     t.snapshot(tree)
 })
