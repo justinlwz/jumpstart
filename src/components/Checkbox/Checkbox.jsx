@@ -10,14 +10,12 @@ class Checkbox extends Component {
         disabled: PropTypes.bool,
         name: PropTypes.string,
         label: PropTypes.string.isRequired,
-        labelPosition: PropTypes.oneOf(['left', 'right']),
         onChange: PropTypes.func,
     }
 
     static defaultProps = {
         checked: false,
         disabled: false,
-        labelPosition: 'right',
         value: false,
     }
 
@@ -49,7 +47,6 @@ class Checkbox extends Component {
             disabled,
             name,
             label,
-            labelPosition,
         } = this.props
 
         // State
@@ -70,7 +67,7 @@ class Checkbox extends Component {
                        disabled={disabled}
                        onChange={this.handleChange}
                 />
-                <LabelStyle as="label" htmlFor={label} labelPosition={labelPosition}>
+                <LabelStyle as="label" htmlFor={label}>
                     {label}
                 </LabelStyle>
             </CheckboxStyle>

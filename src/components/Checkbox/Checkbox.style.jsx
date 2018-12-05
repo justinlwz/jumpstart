@@ -6,6 +6,7 @@ export const CheckboxStyle = styled.div`
     text-align: left;
     position: relative;
     display: inline-flex;
+    user-select: none;
 `
 
 export const InputStyle = styled.input`
@@ -16,16 +17,16 @@ export const InputStyle = styled.input`
     position: absolute;
     display: none;
     :checked ~ ${LabelStyle}:before {
-        left: ${props => props.labelPosition == 'right' ? 0 : "auto"};
-        right: ${props => props.labelPosition == 'right' ? "auto" : 0};
+        left: 0;
+        right: auto;
         border: transparent 1px;
         background-color: ${navActive};
     }
     :checked ~ ${LabelStyle}:after {
         content: "✓";
         top: 50%;
-        left: ${props => props.labelPosition == 'right' ? 0 : "auto"};
-        right: ${props => props.labelPosition == 'right' ? "auto" : 0};
+        left: 0;
+        right: auto;
         transform: translateY(-50%);
         position: absolute;
         font-size: 14px;
@@ -45,13 +46,13 @@ export const LabelStyle = styled.label`
     position: relative;
     color: ${gray100};
     ${transition({prop:'all', timing:'100ms'})}
-    padding-left: ${props => props.labelPosition == 'right' ? "28px" : 0};
-    padding-right: ${props => props.labelPosition == 'right' ? 0 : "28px"};
+    padding-left: 28px;
+    padding-right: 0;
     :before {
         content: " ";
         top: 50%;
-        right: ${props => props.labelPosition == 'right' ? 0 : 'auto'};
-        left: ${props => props.labelPosition == 'right' ? "auto" : 0};
+        left: 0;
+        right: auto;
         transform: translateY(-50%);
         position: absolute;
         width: 16px;
