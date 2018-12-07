@@ -69,9 +69,8 @@ class Checkbox extends PureComponent {
 
         // Create Element
         return (
-            <CheckboxStyle as="div">
-                <InputStyle as="input"
-                       type="checkbox"
+            <CheckboxStyle>
+                <InputStyle type="checkbox"
                        id={label}
                        checked={value}
                        value={value}
@@ -80,10 +79,10 @@ class Checkbox extends PureComponent {
                        debug={debug}
                        onChange={this.handleChange}
                 />
-                <BoxStyle as="div" labelPosition={labelPosition}>
-                    <CheckStyle as="div">✓</CheckStyle>
+                <BoxStyle labelPosition={labelPosition}>
+                    <CheckStyle>✓</CheckStyle>
                 </BoxStyle>
-                <LabelStyle as="label" htmlFor={label}>
+                <LabelStyle htmlFor={label}>
                     {label}
                 </LabelStyle>
             </CheckboxStyle>

@@ -11,6 +11,8 @@
 export const nav = '#13A1E4'
 export const navActive = '#006187'
 export const navActiveBg = 'rgba(19, 161, 228, 0.05)'
+export const gradientLight = '#85CDFB'
+export const gradientDark = '#1398E0'
 export const disabled = '#D9DADB'
 
 export const gray100 = '#141414'

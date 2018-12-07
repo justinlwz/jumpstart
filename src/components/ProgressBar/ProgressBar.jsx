@@ -1,59 +1,52 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
-ProgressBar.propTypes = {
-    mode: PropTypes.oneOf([
-        'determinate',
-        'indeterminate'
-    ]),
-    value: PropTypes.number,
-    min: PropTypes.number,
-    max: PropTypes.number
-};
+import {ProgressBarStyle, BarStyle, TextStyle} from './ProgressBar.style'
 
-ProgressBar.defaultProps = {
-    mode: 'indeterminate',
-    value: 0,
-    min: 0,
-    max: 100,
-};
+class ProgressBar extends PureComponent {
 
-const progressType = (props) => {
-    
-    // Props
-    const {
-        max,
-        mode,
-        value,
-    } = props;
-
-    let barType;
-    if (mode === 'determinate') {
-        <div style={{ 'width': `${(value / max) * 100}%` }}>
-            <span className="text">{(value / max) * 100}%</span>
-        </div>;
-    } else {
-        <div>
-            <span className="text">Loading...</span>
-        </div>;
+    static propTypes = {
+        mode: PropTypes.oneOf([
+            'determinate',
+            'indeterminate'
+        ]),
+        width: PropTypes.number,
+        value: PropTypes.number,
+        min: PropTypes.number,
+        max: PropTypes.number
     }
-    return barType;
-};
+    
+    static defaultProps = {
+        mode: 'determinate',
+        width: 320,
+        value: 0,
+        min: 0,
+        max: 100,
+    }
 
-const ProgressBar = (props) => {
+    render() {
 
-    // Props
-    const {
-        max,
-        mode,
-        value,
-    } = props;
+        // Props
+        const {
+            max,
+            mode,
+            value,
+            ...filteredProps
+        } = this.props
+        
+        return (
+            <ProgressBarStyle {...filteredProps}>
+                <BarStyle mode={mode} value={value} />
+                <TextStyle>
+                    {mode ==='determinate'
+                        ? (value / max) * 100 + '%'
+                        : 'Loading...'
+                    }
+                </TextStyle>
+            </ProgressBarStyle>
+        )
+    }
+    
+}
 
-    return (
-        <div className="progress-bar">
-            {progressType()}
-        </div>
-    );
-};
-
-export default ProgressBar;
+export default ProgressBar

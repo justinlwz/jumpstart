@@ -69,9 +69,8 @@ class Radio extends PureComponent {
 
         // Create Element
         return (
-            <RadioStyle as="div">
-                <InputStyle as="input"
-                       type="radio"
+            <RadioStyle>
+                <InputStyle type="radio"
                        id={label}
                        checked={value}
                        value={value}
@@ -80,10 +79,10 @@ class Radio extends PureComponent {
                        debug={debug}
                        onChange={this.handleChange}
                 />
-                <CircleStyle as="div" labelPosition={labelPosition}>
-                    <MarkStyle as="div" />
+                <CircleStyle labelPosition={labelPosition}>
+                    <MarkStyle />
                 </CircleStyle>
-                <LabelStyle as="label" htmlFor={label} labelPosition={labelPosition}>
+                <LabelStyle htmlFor={label} labelPosition={labelPosition}>
                     {label}
                 </LabelStyle>
             </RadioStyle>

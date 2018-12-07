@@ -1,29 +1,54 @@
-import styled from 'styled-components'
-import { radius, shadow } from '../Styles/StyleUtils/Mixins.style'
-import { navActive, gray100, gray600, grayD00, grayF00 } from '../Styles/StyleUtils/Colours.style'
+import styled, { css, keyframes } from 'styled-components'
+import { radius, shadow, transition } from '../Styles/StyleUtils/Mixins.style'
+import { gradientLight, gradientDark, grayC00, gray100 } from '../Styles/StyleUtils/Colours.style'
+
+const progressAnimation = keyframes`
+    0% { 
+        background-position: 0% 50% 
+    }
+    50% { 
+        background-position: 100% 50% 
+    }
+    100% { 
+        background-position: 0% 50% 
+    }
+`
 
 export const ProgressBarStyle = styled.div`
-    width: 100%;
+    width: ${props => props.width + 'px'};
     height: 24px;
-    overflow: hidden;
-    background: $color-gray-C00;
-    @include round-corners($value: 2px);
-    @include shadow($inset: true);
+    position: relative;
+    background: ${grayC00};
     ${radius({value:'2px'})}
     ${shadow({inset:true})}
 `
 
-export const CheckStyle = styled.div`
-    top: 0;
-    left: 0;
-    position: absolute;
-    font-size: 14px;
-    text-align: center;
-    width: 14px;
-    line-height: 14px;
-    color: transparent;
-    ${InputStyle}:checked ~ ${BoxStyle} & {
-        color: white;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+export const BarStyle = styled.div`
+    ${props => props.mode == 'indeterminate' && css`
+        width: 100%;
+    `}
+    ${props => props.mode == 'determinate' && css`
+        width: ${props => props.value + '%'};
+    `}
+    height: 100%;
+    background-image: linear-gradient(140deg, ${gradientLight}, ${gradientDark});
+    background-size: 200% 100%;
+    animation: ${progressAnimation} 3s ease-in-out infinite;
+    ${radius({value:'2px'})}
+    ${shadow({inset:true})}
+    ${transition({prop:'width', timing: '150ms'})}
+    :disabled {
+        display: none;
     }
+`
+
+export const TextStyle = styled.span`
+    top: 28px;
+    right: 0;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 16px;
+    text-transform: uppercase;
+    position: absolute;
+    color: ${gray100};
 `

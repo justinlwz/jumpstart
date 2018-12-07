@@ -37,7 +37,7 @@ class Button extends PureComponent {
         } = this.props
 
         return (
-            <ButtonStyle as="button" {...filteredProps}>
+            <ButtonStyle {...filteredProps}>
                 {children}
             </ButtonStyle>
         )
