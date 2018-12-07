@@ -1,5 +1,5 @@
 import { configure } from '@storybook/react'
-import { withOptions } from '@storybook/addon-options'
+import { setOptions } from '@storybook/addon-options'
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /.stories.js$/)
@@ -8,17 +8,17 @@ function loadStories() {
 }
 
 // Option defaults:
-withOptions({
+setOptions({
   /**
    * Name to display in the top left corner
    * @type {String}
    */
-  name: 'Storybook',
+  name: 'Jumpstart',
   /**
    * URL for name in top left corner to link to
    * @type {String}
    */
-  url: 'https://justinlwz@github.com/justinlwz/storybook-boilerplate',
+  url: 'https://justinlwz@github.com/justinlwz/jumpstart',
   /**
    * Show story component as full screen
    * @type {Boolean}
