@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A boilerplate to help kickstart Design System implementation and skip some of the initial setup.",
   "keywords": [
+    "jumpstart",
     "design system",
     "storybook",
     "ui",
