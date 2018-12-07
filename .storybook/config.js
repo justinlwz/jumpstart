@@ -13,7 +13,7 @@ withOptions({
    * Name to display in the top left corner
    * @type {String}
    */
-  name: 'Storybook',
+  name: 'Jumpstart',
   /**
    * URL for name in top left corner to link to
    * @type {String}

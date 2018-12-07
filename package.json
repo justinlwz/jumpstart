@@ -1,5 +1,5 @@
 {
-  "name": "storybook-boilerplate",
+  "name": "jumpstart",
   "version": "1.0.0",
   "description": "A boilerplate to help kickstart Design System implementation and skip some of the initial setup.",
   "keywords": [
@@ -22,13 +22,13 @@
     "clean": "gulp clean",
     "release": "np --no-publish"
   },
-  "repository": "git+https://justinlwz@github.com/justinlwz/storybook-boilerplate.git",
+  "repository": "git+https://justinlwz@github.com/justinlwz/jumpstart.git",
   "author": "Justin Lim (http://justinlim.xyz/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/justinlwz/storybook-boilerplate/issues"
+    "url": "https://github.com/justinlwz/jumpstart/issues"
   },
-  "homepage": "https://github.com/justinlwz/storybook-boilerplate#readme",
+  "homepage": "https://github.com/justinlwz/jumpstart#readme",
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.6.3",
