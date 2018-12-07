@@ -1,0 +1,59 @@
+/*
+
+
+    Global Functions
+
+
+*/
+
+
+
+/* -------------------------------------
+
+    Typography
+
+------------------------------------- */
+
+// REM Calculator
+@function rem-calc($size, $base-size) {
+    @return get-val($size) / get-val($base-size) + rem;
+}
+
+// Unit Stripper
+@function get-val($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+// Rhythm Calculator
+@function rhythm-calc($rhythm, $size, $lines: 1) {
+    $rhythm: get-val($rhythm);
+    $size: get-val($size);
+
+
+    @if $lines == auto {
+    // Auto Calculate Vertical Rhythm
+        $lines: ceil($size / $rhythm);
+        @return ($rhythm / $size * $lines);
+    }
+    @else {
+    // Calculate User Input Rhythm
+        @return ($rhythm / $size * $lines);
+    }
+}
+
+// Lines Calculator
+@function lines-calc($lines) {
+    @return $base-rhythm * $lines;
+}
+
+
+/* -------------------------------------
+
+    Grids
+
+------------------------------------- */
+
+// Grid Calculator
+@function grid-calc($current-column, $total-columns) {
+    @return percentage($current-column / $total-columns);
+}
