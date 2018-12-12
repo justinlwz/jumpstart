@@ -2,14 +2,14 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import { 
-    RadioStyle, 
+    ToggleStyle, 
     InputStyle, 
-    LabelStyle,
-    CircleStyle,
-    MarkStyle
-} from './Radio.style'
+    LabelStyle, 
+    FrameStyle, 
+    KnobStyle, 
+} from './Toggle.style'
 
-class Radio extends PureComponent {
+class Toggle extends PureComponent {
 
     // PropTypes
     static propTypes = {
@@ -29,6 +29,12 @@ class Radio extends PureComponent {
         value: false,
     }
 
+    constructor(props) {
+        super(props)
+        this.state = { value: props.checked }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevState.value !== prevProps.checked) {
             this.setState({
@@ -36,12 +42,7 @@ class Radio extends PureComponent {
             })
         }
     }
-
-    constructor(props) {
-        super(props)
-        this.state = { value: props.checked }
-        this.handleChange = this.handleChange.bind(this)
-    }
+    
 
     handleChange() {
         if (this.props.onChange) {
@@ -52,7 +53,6 @@ class Radio extends PureComponent {
 
     render() {
 
-        // Props
         const {
             name,
             label,
@@ -61,7 +61,6 @@ class Radio extends PureComponent {
             debug,
         } = this.props
 
-        // State
         const {
             value,
         } = this.state
@@ -69,8 +68,8 @@ class Radio extends PureComponent {
 
         // Create Element
         return (
-            <RadioStyle>
-                <InputStyle type="radio"
+            <ToggleStyle>
+                <InputStyle type="checkbox"
                        id={label}
                        checked={value}
                        value={value}
@@ -79,15 +78,20 @@ class Radio extends PureComponent {
                        debug={debug}
                        onChange={this.handleChange}
                 />
-                <CircleStyle labelPosition={labelPosition}>
-                    <MarkStyle />
-                </CircleStyle>
-                <LabelStyle htmlFor={label} labelPosition={labelPosition}>
-                    {label}
-                </LabelStyle>
-            </RadioStyle>
+                <FrameStyle 
+                    labelPosition={label ? labelPosition : null}
+                >
+                    <KnobStyle />
+                </FrameStyle>
+                {
+                    label &&
+                    <LabelStyle htmlFor={label}>
+                        {label}
+                    </LabelStyle>
+                }
+            </ToggleStyle>
         )
     }
 }
 
-export default Radio
+export default Toggle
