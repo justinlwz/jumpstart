@@ -35,6 +35,14 @@ class Checkbox extends PureComponent {
         this.handleChange = this.handleChange.bind(this)
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.value !== prevProps.checked) {
+            this.setState({
+                value: prevProps.checked
+            })
+        }
+    }
+
     handleChange() {
         if (this.props.onChange) {
             this.props.onChange(!this.state.value)
@@ -42,17 +50,8 @@ class Checkbox extends PureComponent {
         this.setState({ value: !this.state.value })
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.state.value !== nextProps.checked) {
-            this.setState({
-                value: nextProps.checked
-            })
-        }
-    }
-
     render() {
 
-        // Props
         const {
             name,
             label,
@@ -61,7 +60,6 @@ class Checkbox extends PureComponent {
             debug,
         } = this.props
 
-        // State
         const {
             value,
         } = this.state
