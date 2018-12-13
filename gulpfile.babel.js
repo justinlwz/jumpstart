@@ -20,7 +20,7 @@ const paths = {
 };
 
 // SVG Processing
-task('assets', () => {
+task('asset-svg', () => {
 
     const minifyOptions = {
         plugins: [
@@ -32,12 +32,19 @@ task('assets', () => {
     };
 
     // SVG
-    return src('src/**/*.svg')
+    return src([
+        'src/**/*.svg',
+        '!**/stories/**/*.svg'
+    ])
         .pipe(svgmin(minifyOptions))
         .pipe(dest(paths.destination));
-    
-    // PNG, JPEG
-    return src('src/**/*.+(png|jpeg|jpg)')
+});
+
+task('asset-static', () => {
+    return src([
+        'src/**/*.+(png|jpeg|jpg)',
+        '!**/stories/**/*.+(png|jpeg|jpg)'
+    ])
         .pipe(dest(paths.destination));
     
 });

@@ -16,8 +16,8 @@
   "scripts": {
     "test": "ava",
     "start": "start-storybook -p 6006",
-    "build": "npm run clean && concurrently --names 'commonjs,assets' 'npm run build-commonjs' 'npm run build-assets'",
-    "build-assets": "gulp assets",
+    "build": "yarn clean && concurrently --names 'commonjs,assets' 'yarn build-commonjs' 'yarn build-assets'",
+    "build-assets": "gulp asset-svg && gulp asset-static",
     "build-commonjs": "babel src --out-dir build --ignore '**/stories','**/test' --source-maps inline",
     "build-storybook": "build-storybook",
     "clean": "gulp clean",
@@ -61,6 +61,7 @@
     "enzyme-adapter-react-16": "^1.7.1",
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
