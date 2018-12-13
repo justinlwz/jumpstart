@@ -5,7 +5,6 @@ class InlineSVG extends PureComponent {
 
     // PropTypes
     static propTypes = {
-        className: PropTypes.string,
         src: PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.object,
@@ -60,9 +59,9 @@ class InlineSVG extends PureComponent {
         } = this.props;
 
         return (
-            <svg className={className} style={style}
-                ref={(insertionPoint) => { this.inlineSVGInsertion = insertionPoint; }}
-            />
+            <svg ref={
+                (insertionPoint) => { this.inlineSVGInsertion = insertionPoint; }
+            }/>
         );
 
     }

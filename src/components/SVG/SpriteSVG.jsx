@@ -5,7 +5,6 @@ class SpriteSVG extends PureComponent {
 
     // PropTypes
     static propTypes = {
-        className: PropTypes.string,
         vBoxWidth: PropTypes.number,
         vBoxHeight: PropTypes.number,
         defsInjectionSelector: PropTypes.string,
@@ -90,16 +89,18 @@ class SpriteSVG extends PureComponent {
     render() {
         // Props
         const {
-            className,
             vBoxWidth,
             vBoxHeight,
             icon,
-            style,
         } = this.props;
 
         // Create Element
         return (
-            <svg ref={(insertionPoint) => { this.spriteSheetInsertion = insertionPoint; }} className={className} viewBox={`0 0 ${vBoxWidth} ${vBoxHeight}`} data-sprite={icon} style={style}  />
+            <svg 
+                ref={(insertionPoint) => { this.spriteSheetInsertion = insertionPoint; }} 
+                viewBox={`0 0 ${vBoxWidth} ${vBoxHeight}`} 
+                data-sprite={icon} 
+            />
         );
     }
 }

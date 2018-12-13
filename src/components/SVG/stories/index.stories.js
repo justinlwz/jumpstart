@@ -1,19 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import centered from '@storybook/addon-centered';
 
-import '../../Styles/normalize.scss';
-import '../../Styles/global.scss';
-import '../../Styles/typography.scss';
-import '../../Styles/animate.scss';
-import '../../Styles/icons.scss';
-
 import { InlineSVG, SpriteSVG } from '..';
 import icon from './apple.svg';
-import sprite from './document-sprite.svg';
+import sprite from './payment-sprite.svg';
 
 
 storiesOf('SVG', module)
@@ -33,19 +27,25 @@ storiesOf('SVG', module)
 	.addDecorator(withKnobs)
 	.addDecorator(centered)
 	.add('Inline', () => 
-		<InlineSVG 
-			src={icon}
-		/>
+		<Fragment>
+			<GlobalStyle />
+			<InlineSVG 
+				src={icon}
+			/>
+		</Fragment>
 	)
 	.add('Sprite', () => 
-		<SpriteSVG 
-			vBoxWidth={48} 
-			vBoxHeight={48} 
-			src={sprite} 
-			icon="DraftCategory" 
-			style={{
-				width: '64px',
-				height: '64px'
-			}}
-		/>
+		<Fragment>
+			<GlobalStyle />
+			<SpriteSVG 
+				vBoxWidth={48} 
+				vBoxHeight={48} 
+				src={sprite} 
+				icon="visa-dark" 
+				style={{
+					width: '100px',
+					height: '60px'
+				}}
+			/>
+		</Fragment>
 	)
