@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
 class SpriteSVG extends PureComponent {
 
@@ -15,6 +15,10 @@ class SpriteSVG extends PureComponent {
     }
 
     static defaultProps = {
+        vBoxWidth: null,
+        vBoxHeight: null,
+        defsInjectionSelector: null,
+        icon: null,
         src: null,
     }
 
@@ -43,48 +47,48 @@ class SpriteSVG extends PureComponent {
 
         const {
             defsInjectionSelector
-        } = this.props;
+        } = this.props
 
         // Doc fragment from DOM Parser
-        let fragment;
+        let fragment
         if (typeof (src) === 'object') {
-            fragment = src;
+            fragment = src
         } else {
-            fragment = new DOMParser().parseFromString(src, 'image/svg+xml');
+            fragment = new DOMParser().parseFromString(src, 'image/svg+xml')
         }
-        const insertionPoint = this.spriteSheetInsertion;
+        const insertionPoint = this.spriteSheetInsertion
 
         // Get attribute
         // Get ID that matched with attributes
-        const attr = 'data-sprite';
-        let artboardID;
+        const attr = 'data-sprite'
+        let artboardID
         if (insertionPoint) {
-            artboardID = insertionPoint.getAttribute(attr);
+            artboardID = insertionPoint.getAttribute(attr)
         }
 
         // Get top definition object
         // Create invisible Defs for reference
-        let defs = fragment.querySelector('svg > defs');
+        let defs = fragment.querySelector('svg > defs')
         if (defs) {
-            const defsWrapper = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            defsWrapper.id = fragment.querySelector('title').textContent;
-            defsWrapper.style.height = '0';
-            defsWrapper.style.width = '0';
-            defsWrapper.style.position = '0';
-            defsWrapper.appendChild(defs);
+            const defsWrapper = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            defsWrapper.id = fragment.querySelector('title').textContent
+            defsWrapper.style.height = '0'
+            defsWrapper.style.width = '0'
+            defsWrapper.style.position = '0'
+            defsWrapper.appendChild(defs)
             if (defsInjectionSelector) {
-                document.querySelector(defsInjectionSelector).appendChild(defsWrapper);
+                document.querySelector(defsInjectionSelector).appendChild(defsWrapper)
             } else {
-                document.body.appendChild(defsWrapper);
+                document.body.appendChild(defsWrapper)
             }
         }
 
-        let svgIcon = fragment.getElementById(artboardID);
+        let svgIcon = fragment.getElementById(artboardID)
         if (svgIcon) {
-            svgIcon = svgIcon.cloneNode(true);
+            svgIcon = svgIcon.cloneNode(true)
             // Remove relative Transforms
-            svgIcon.removeAttribute('transform');
-            insertionPoint.appendChild(svgIcon);
+            svgIcon.removeAttribute('transform')
+            insertionPoint.appendChild(svgIcon)
         }
     }
 
