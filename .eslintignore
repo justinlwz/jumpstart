@@ -1,0 +1,7 @@
+# 
+# Ignore Stories, Test Folders, &.style.jsx
+#
+
+**/stories
+**/test
+**/*.style.*

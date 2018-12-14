@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text, boolean, select, number } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select, number } from '@storybook/addon-knobs'
 import { withInfo } from '@storybook/addon-info'
 import centered from '@storybook/addon-centered'
 
@@ -13,14 +13,14 @@ const typeOptions = {
 	Normal: 'normal', 
 	Quiet: 'quiet', 
 	'No Effect': 'no-effect',
-};
+}
 
 const radiusOptions = {
 	range: true,
 	min: 0,
 	max: 5,
 	step: 1,
- };
+}
 
 storiesOf('Button', module)
 	.addDecorator(withInfo({

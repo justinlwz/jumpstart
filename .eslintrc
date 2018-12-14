@@ -3,7 +3,7 @@
     "parserOptions": {
         "ecmaVersion": 2018
     },
-    "plugins": ["react", "import", "prettier"],
+    "plugins": ["react", "import"],
     "globals": {
         "$": true,
         "$$": true,
@@ -16,7 +16,7 @@
         "afterAll": true,
         "expect": true
     },
-    "extends": ["airbnb", "prettier", "prettier/react"],
+    "extends": ["airbnb"],
     "root": true,
     "env": {
         "es6": true,
@@ -24,19 +24,12 @@
         "node": true
     },
     "rules": {
-        "prettier/prettier": [
-            "error", 
-            {
-                "printWidth": 100,
-                "trailingComma": "all",
-                "tabWidth": 4,
-                "singleQuote": true,
-                "arrowParens": "always",
-                "endOfLine": "lf"
-            }
-        ],
+        "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "react/jsx-indent": ["error", 4],
         "no-underscore-dangle": "off",
-        "no-unused-expressions": ["error", {"allowTernary": true}],
+        "no-unused-expressions": ["error", { "allowTernary": true }],
+        "semi": ["error", "never"],
         "react/forbid-prop-types": "warn"
     }
 }
