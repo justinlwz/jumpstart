@@ -9,7 +9,7 @@
     "ui",
     "react"
   ],
-  "main": "build/index.js",
+  "main": "build/components/index.js",
   "files": [
     "/build"
   ],
