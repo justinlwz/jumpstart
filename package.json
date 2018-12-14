@@ -77,7 +77,7 @@
   },
   "ava": {
     "files": [
-      "**/test/**/*.jsx"
+      "**/test/**/*.spec.jsx"
     ],
     "require": [
       "@babel/register",
