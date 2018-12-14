@@ -199,4 +199,5 @@ $RECYCLE.BIN/
 
 # Build Folder
 build
+storybook-static
 .cache
