@@ -2,6 +2,10 @@
 # Ignore Stories, Test Folders, &.style.jsx
 #
 
+.storybook
+build
+tools
+node_modules
 **/stories
 **/test
 **/*.style.*
