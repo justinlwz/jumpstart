@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 class SpriteSVG extends PureComponent {
 
-    // PropTypes
     static propTypes = {
         vBoxWidth: PropTypes.number,
         vBoxHeight: PropTypes.number,
@@ -13,7 +12,30 @@ class SpriteSVG extends PureComponent {
             PropTypes.string,
             PropTypes.object,
         ]),
-    };
+    }
+
+    static defaultProps = {
+        src: null,
+    }
+
+    componentDidMount() {
+        // Props
+        const {
+            src,
+        } = this.props
+
+        fetch(src)
+            .then(response => response.text())
+            .then((svgText) => {
+                this._parseSVGSprite(svgText)
+            })
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.src !== prevProps.src) {
+            this._parseSVGSprite(this.props.src)
+        }
+    }
 
     // SVG Spritesheet Parser
     // Implementation is specific to Sketch.app SVG export
@@ -64,27 +86,7 @@ class SpriteSVG extends PureComponent {
             svgIcon.removeAttribute('transform');
             insertionPoint.appendChild(svgIcon);
         }
-    };
-
-    componentDidMount() {
-        // Props
-        const {
-            src,
-        } = this.props;
-
-        fetch(src)
-            .then(response => response.text())
-            .then(svgText => {
-                this._parseSVGSprite(svgText);
-            });
     }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (this.props.src !== prevProps.src) {
-            this._parseSVGSprite(this.props.src);
-        }
-    }
-    
 
     render() {
         // Props
@@ -92,17 +94,17 @@ class SpriteSVG extends PureComponent {
             vBoxWidth,
             vBoxHeight,
             icon,
-        } = this.props;
+        } = this.props
 
         // Create Element
         return (
             <svg 
-                ref={(insertionPoint) => { this.spriteSheetInsertion = insertionPoint; }} 
+                ref={(insertionPoint) => { this.spriteSheetInsertion = insertionPoint }} 
                 viewBox={`0 0 ${vBoxWidth} ${vBoxHeight}`} 
                 data-sprite={icon} 
             />
-        );
+        )
     }
 }
 
-export default SpriteSVG;
+export default SpriteSVG

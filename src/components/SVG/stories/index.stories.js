@@ -1,29 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from 'react'
 
-import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
-import centered from '@storybook/addon-centered';
+import { storiesOf } from '@storybook/react'
+import { withKnobs } from '@storybook/addon-knobs'
+import centered from '@storybook/addon-centered'
 
-import { InlineSVG, SpriteSVG } from '..';
-import icon from './apple.svg';
-import sprite from './payment-sprite.svg';
+import { InlineSVG, SpriteSVG } from '..'
+import icon from './apple.svg'
+import sprite from './payment-sprite.svg'
 
 
 storiesOf('SVG', module)
-	.addDecorator(withInfo({
-		header: false,
-		styles: {
-			button: {
-				topRight: {
-					top: 0,
-					left: 0,
-					right: 'initial',
-					borderRadius: '0 0 5px 0',
-				},
-			}
-		},
-	}))
 	.addDecorator(withKnobs)
 	.addDecorator(centered)
 	.add('Inline', () => 

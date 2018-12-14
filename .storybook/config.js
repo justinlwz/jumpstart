@@ -1,4 +1,5 @@
-import { configure } from '@storybook/react'
+import { configure, addDecorator } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import { setOptions } from '@storybook/addon-options'
 
 // automatically import all files ending in *.stories.js
@@ -6,6 +7,20 @@ const req = require.context('../src', true, /.stories.js$/)
 function loadStories() {
   req.keys().forEach(filename => req(filename))
 }
+
+addDecorator(withInfo({
+  header: false,
+  styles: {
+    button: {
+      topRight: {
+        top: 0,
+        left: 0,
+        right: 'initial',
+        borderRadius: '0 0 5px 0',
+      },
+    }
+  },
+}))
 
 // Option defaults:
 setOptions({
