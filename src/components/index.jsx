@@ -1,4 +1,4 @@
-export { Button } from './Buttons'
+export { Button } from './Button'
 export { Checkbox } from './Checkbox'
 export { ProgressBar } from './ProgressBar'
 export { Radio } from './Radio'
