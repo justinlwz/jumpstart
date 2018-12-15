@@ -1,35 +1,33 @@
 {
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaVersion": 2018
-    },
-    "plugins": ["react", "import"],
-    "globals": {
-        "$": true,
-        "$$": true,
-        "beforeAll": true,
-        "browser": true,
-        "it": true,
-        "describe": true,
-        "beforeEach": true,
-        "afterEach": true,
-        "afterAll": true,
-        "expect": true
-    },
-    "extends": ["airbnb"],
-    "root": true,
-    "env": {
-        "es6": true,
-        "browser": true,
-        "node": true
-    },
-    "rules": {
-        "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
-        "indent": ["error", 4, { "SwitchCase": 1 }],
-        "react/jsx-indent": ["error", 4],
-        "no-underscore-dangle": "off",
-        "no-unused-expressions": ["error", { "allowTernary": true }],
-        "semi": ["error", "never"],
-        "react/forbid-prop-types": "warn"
-    }
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "plugins": ["react", "import"],
+  "globals": {
+    "$": true,
+    "$$": true,
+    "beforeAll": true,
+    "browser": true,
+    "it": true,
+    "describe": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "afterAll": true,
+    "expect": true
+  },
+  "extends": ["airbnb"],
+  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": ["error", { "allowTernary": true }],
+    "semi": ["error", "never"],
+    "react/forbid-prop-types": "warn"
+  }
 }

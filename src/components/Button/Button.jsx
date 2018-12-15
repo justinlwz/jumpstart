@@ -4,44 +4,35 @@ import PropTypes from 'prop-types'
 import ButtonStyle from './Button.style'
 
 class Button extends PureComponent {
+  // PropTypes
+  static propTypes = {
+    children: PropTypes.node,
+    type: PropTypes.oneOf(['normal', 'quiet', 'no-effect']),
+    radius: PropTypes.number,
+    small: PropTypes.bool,
+    disabled: PropTypes.bool,
+  }
 
-    // PropTypes
-    static propTypes = {
-        children: PropTypes.node,
-        type: PropTypes.oneOf(['normal', 'quiet', 'no-effect']),
-        radius: PropTypes.number,
-        small: PropTypes.bool,
-        disabled: PropTypes.bool,
+  static defaultProps = {
+    type: 'normal',
+    radius: 3,
+  }
+
+  _handleClick = (e) => {
+    const { disabled, onClick } = this.props
+    if (disabled) {
+      e.preventDefault()
+      return
     }
+    if (onClick) onClick(e)
+  }
 
-    static defaultProps = {
-        type: 'normal',
-        radius: 3
-    }
+  render() {
+    // Props
+    const { children, ...filteredProps } = this.props
 
-    _handleClick = (e) => {
-        const { disabled, onClick } = this.props
-        if (disabled) {
-            e.preventDefault()
-            return
-        }
-        if (onClick) onClick(e)
-    }
-
-    render() {
-
-        // Props
-        const {
-            children,
-            ...filteredProps
-        } = this.props
-
-        return (
-            <ButtonStyle {...filteredProps}>
-                {children}
-            </ButtonStyle>
-        )
-    }
+    return <ButtonStyle {...filteredProps}>{children}</ButtonStyle>
+  }
 }
 
 export default Button

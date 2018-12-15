@@ -6,6 +6,7 @@
 build
 tools
 node_modules
+**/components/Styles
 **/stories
 **/test
 **/*.style.*
