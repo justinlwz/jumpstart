@@ -5,7 +5,7 @@ import render from 'react-test-renderer'
 import { Radio } from '..'
 
 test('Radio component', t => {
-    const component = <Radio label='Choice 1'/>
-    const tree = render.create(component).toJSON()
-    t.snapshot(tree)
+  const component = <Radio label='Choice 1'/>
+  const tree = render.create(component).toJSON()
+  t.snapshot(tree)
 })

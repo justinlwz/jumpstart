@@ -45,17 +45,17 @@ class InlineSVG extends PureComponent {
     while (parentSVG.childNodes.length > 0) {
       this.inlineSVGInsertion.appendChild(parentSVG.childNodes[0])
     }
-  };
+  }
 
   render() {
     return (
       <svg
         ref={(insertionPoint) => {
-          this.inlineSVGInsertion = insertionPoint;
+          this.inlineSVGInsertion = insertionPoint
         }}
       />
-    );
+    )
   }
 }
 
-export default InlineSVG;
+export default InlineSVG

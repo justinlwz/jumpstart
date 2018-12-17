@@ -28,4 +28,4 @@ storiesOf('Checkbox', module)
 				onChange={action('changed')}
 			/>
 		</Fragment>
-	)
+  )

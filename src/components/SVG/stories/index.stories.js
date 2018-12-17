@@ -34,4 +34,5 @@ storiesOf('SVG', module)
 				}}
 			/>
 		</Fragment>
-	)
+  )
+  

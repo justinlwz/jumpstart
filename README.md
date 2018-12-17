@@ -35,3 +35,17 @@ yarn start
 | [AVA](https://github.com/avajs/ava)                     | Test Runner                   | [![AVA](https://img.shields.io/npm/dm/ava.svg)](https://github.com/avajs/ava)                                     |
 | [Enzyme](https://airbnb.io/enzyme/)                     | Structural & Snapshot Testing | [![Enzyme](https://img.shields.io/npm/dm/enzyme.svg)](https://github.com/airbnb/enzyme/)                          |
 | [NP](https://github.com/sindresorhus/np)                | NPM & Yarn Publishing Manager | [![NP](https://img.shields.io/npm/dm/np.svg)](https://github.com/sindresorhus/np)                                 |
+
+### Components
+
+| Component        | Type      | Link to Library                                           |
+| ---------------- | --------- | --------------------------------------------------------- |
+| Button           | Custom    | -                                                         |
+| Checkbox         | Custom    | -                                                         |
+| ProgressBar      | Custom    | -                                                         |
+| Radio            | Custom    | -                                                         |
+| SVG              | Custom    | -                                                         |
+| Toggle           | Custom    | -                                                         |
+| Style Utils      | Custom    | -                                                         |
+| TODO: InputField | Custom    | -                                                         |
+| TODO: Dropdown   | Library   | [React Select](https://github.com/JedWatson/react-select) |

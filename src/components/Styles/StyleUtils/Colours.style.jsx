@@ -1,7 +1,7 @@
 /*
 
 
-    Styled Components Variables
+  Styled Components Variables
 
 
 */
