@@ -103,4 +103,4 @@ class SpriteSVG extends PureComponent {
   }
 }
 
-export default SpriteSVG;
+export default SpriteSVG
