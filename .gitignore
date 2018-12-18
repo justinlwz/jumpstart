@@ -1,4 +1,5 @@
 
+
 # Created by https://www.gitignore.io/api/git,osx,node,tower,windows,sublimetext,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=git,osx,node,tower,windows,sublimetext,visualstudiocode
 
@@ -90,10 +91,13 @@ typings/
 .vuepress/dist
 
 # Serverless directories
-.serverless
+.serverless/
 
 # FuseBox cache
 .fusebox/
+
+#DynamoDB Local files
+.dynamodb/
 
 ### OSX ###
 # General
