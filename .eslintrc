@@ -28,6 +28,7 @@
     "no-underscore-dangle": "off",
     "no-unused-expressions": ["error", { "allowTernary": true }],
     "semi": ["error", "never"],
-    "react/forbid-prop-types": "warn"
+    "react/forbid-prop-types": "warn",
+    "react/require-default-props": "off"
   }
 }
