@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 
 class InlineSVG extends PureComponent {
   static propTypes = {
-    src: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+    src: PropTypes.oneOfType([
+      PropTypes.string, 
+      PropTypes.object
+    ]),
   }
 
   static defaultProps = {
@@ -13,7 +16,6 @@ class InlineSVG extends PureComponent {
   componentDidMount() {
     // Props
     const { src } = this.props
-
     fetch(src)
       .then(response => response.text())
       .then((svgText) => {

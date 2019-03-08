@@ -25,6 +25,7 @@
   },
   "rules": {
     "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
+    "indent": "off",
     "no-underscore-dangle": "off",
     "no-unused-expressions": ["error", { "allowTernary": true }],
     "semi": ["error", "never"],

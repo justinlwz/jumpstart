@@ -2,9 +2,11 @@ import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import centered from '@storybook/addon-centered'
+import centered from '@storybook/addon-centered/react'
 
 import { InlineSVG, SpriteSVG } from '..'
+import GlobalStyle from '../../Styles/Global'
+
 import icon from './apple.svg'
 import sprite from './payment-sprite.svg'
 
