@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 class InlineSVG extends PureComponent {
   static propTypes = {
     src: PropTypes.oneOfType([
-      PropTypes.string, 
-      PropTypes.object
+      PropTypes.string,
+      PropTypes.object,
     ]),
   }
 
