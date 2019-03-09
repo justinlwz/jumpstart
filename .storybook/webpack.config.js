@@ -1,16 +1,14 @@
+const path = require('path');
+
 module.exports = {
   entry: ['@babel/polyfill'],
   module: {
     rules: [
       {
-        test: /\.svg$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'file-loader',
-          }
-        ]
-      }
-    ]
+        test: /\.tsx?$/,
+        include: path.resolve(__dirname, '../src'),
+        use: [require.resolve('react-docgen-typescript-loader')],
+      },
+    ],
   }
 }

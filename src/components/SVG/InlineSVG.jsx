@@ -26,6 +26,7 @@ class InlineSVG extends PureComponent {
   // SVG Single Icon Parser
   _inlineSVGInsert = (svgRaw) => {
     let fragment
+    const { src } = this.props
     if (typeof src === 'object') {
       fragment = src
     } else {
