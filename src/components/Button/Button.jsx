@@ -11,6 +11,7 @@ class Button extends PureComponent {
     radius: PropTypes.number,
     small: PropTypes.bool,
     disabled: PropTypes.bool,
+    onClick: PropTypes.func,
   }
 
   static defaultProps = {
