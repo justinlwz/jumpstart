@@ -1,13 +1,3 @@
-/*
-
-
-  Styled Components Variables
-
-
-*/
-
-
-
 export const nav = '#13A1E4'
 export const navActive = '#006187'
 export const navActiveBg = 'rgba(19, 161, 228, 0.05)'

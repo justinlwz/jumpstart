@@ -1,13 +1,3 @@
-/*
-
-
-  Styled Components Mixins
-
-
-*/
-
-
-
 export function radius({
   value = '3px',
 }) {
