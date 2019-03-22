@@ -5,10 +5,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        include: path.resolve(__dirname, '../src'),
-        use: [require.resolve('react-docgen-typescript-loader')],
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        use: 'file-loader',
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: [
+          'ts-loader',
+          'react-docgen-typescript-loader'
+        ],
       },
     ],
-  }
+  },
+  resolve: {
+    extensions: [ '.tsx', '.ts' ]
+  },
 }
