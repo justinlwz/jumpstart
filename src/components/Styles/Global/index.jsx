@@ -1,8 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 import Normalize from './Normalize.style'
+import Fonts from './Fonts.style'
 
 const GlobalStyle = createGlobalStyle`
+
   ${Normalize}
+  ${Fonts}
   
   html, body {
     height: 100%;
