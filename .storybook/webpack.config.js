@@ -1,25 +1,10 @@
-const path = require('path');
+module.exports = async ({ config }) => {
 
-module.exports = {
-  entry: ['@babel/polyfill'],
-  module: {
-    rules: [
-      {
-        test: /\.svg$/,
-        exclude: /node_modules/,
-        use: 'file-loader',
-      },
-      {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        use: [
-          'ts-loader',
-          'react-docgen-typescript-loader'
-        ],
-      },
-    ],
-  },
-  resolve: {
-    extensions: [ '.tsx', '.ts' ]
-  },
-}
+  config.module.rules.push({
+    test: /\.svg$/,
+    exclude: /node_modules/,
+    loaders: 'file-loader',
+  });
+
+  return config;
+};
