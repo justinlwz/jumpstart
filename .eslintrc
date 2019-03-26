@@ -24,10 +24,13 @@
     "node": true
   },
   "rules": {
+    "eol-last": "off",
     "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
     "indent": "off",
+    "no-trailing-spaces": "off",
     "no-underscore-dangle": "off",
     "no-unused-expressions": ["error", { "allowTernary": true }],
+    "padded-blocks": "off",
     "semi": ["error", "never"],
     "react/forbid-prop-types": "warn",
     "react/require-default-props": "off"
