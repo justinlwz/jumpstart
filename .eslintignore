@@ -10,3 +10,4 @@ node_modules
 **/stories
 **/test
 **/*.style.*
+gulpfile.babel.js

@@ -16,8 +16,8 @@ task('asset-svg', () => {
       { cleanupIDs: false },
       { collapseGroups: false },
       { convertTransform: false },
-      { moveGroupAttrsToElems: false }
-    ]
+      { moveGroupAttrsToElems: false },
+    ],
   }
 
   // SVG
