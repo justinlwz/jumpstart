@@ -10,7 +10,7 @@ import {
 } from './Radio.style'
 
 class Radio extends PureComponent {
-  // PropTypes
+
   static propTypes = {
     name: PropTypes.string,
     label: PropTypes.string.isRequired,
@@ -50,13 +50,16 @@ class Radio extends PureComponent {
   }
 
   render() {
-    // Props
-    const { name, label, labelPosition, disabled, debug } = this.props
+    const { 
+      name, 
+      label, 
+      labelPosition, 
+      disabled, 
+      debug 
+    } = this.props
 
-    // State
     const { value } = this.state
 
-    // Create Element
     return (
       <RadioStyle>
         <InputStyle

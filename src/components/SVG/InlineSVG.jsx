@@ -14,8 +14,9 @@ class InlineSVG extends PureComponent {
   }
 
   componentDidMount() {
-    // Props
+    
     const { src } = this.props
+
     fetch(src)
       .then(response => response.text())
       .then((svgText) => {

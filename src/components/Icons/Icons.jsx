@@ -12,7 +12,6 @@ class Icons extends PureComponent {
   }
 
   render() {
-    // Props
     const {
       children, 
       ...filteredProps

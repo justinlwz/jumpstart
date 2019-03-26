@@ -25,7 +25,6 @@ class ProgressBar extends PureComponent {
   }
 
   render() {
-    // Props
     const {
       max,
       mode,

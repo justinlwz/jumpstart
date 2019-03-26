@@ -15,11 +15,11 @@ class SpriteSVG extends PureComponent {
     vBoxHeight: null,
     defsInjectionSelector: null,
     icon: null,
-    src: null
+    src: null,
   }
 
   componentDidMount() {
-    // Props
+
     const { src } = this.props
 
     fetch(src)

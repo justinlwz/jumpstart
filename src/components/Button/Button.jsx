@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 
 import ButtonStyle from './Button.style'
 
+
 class Button extends PureComponent {
-  // PropTypes
+
   static propTypes = {
     children: PropTypes.node,
     type: PropTypes.oneOf(['normal', 'quiet', 'no-effect']),
@@ -29,8 +30,10 @@ class Button extends PureComponent {
   }
 
   render() {
-    // Props
-    const { children, ...filteredProps } = this.props
+    const { 
+      children, 
+      ...filteredProps 
+    } = this.props
 
     return <ButtonStyle {...filteredProps}>{children}</ButtonStyle>
   }

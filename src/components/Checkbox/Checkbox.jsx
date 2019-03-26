@@ -10,7 +10,7 @@ import {
 } from './Checkbox.style'
 
 class Checkbox extends PureComponent {
-  // PropTypes
+
   static propTypes = {
     name: PropTypes.string,
     label: PropTypes.string.isRequired,
@@ -60,7 +60,6 @@ class Checkbox extends PureComponent {
 
     const { value } = this.state
 
-    // Create Element
     return (
       <CheckboxStyle>
         <InputStyle
