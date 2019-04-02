@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import {
   CheckboxStyle,
   InputStyle,
-  LabelStyle,
   BoxStyle,
   CheckStyle
 } from './Checkbox.style'
@@ -12,9 +11,11 @@ import {
 class Checkbox extends PureComponent {
 
   static propTypes = {
+    id: PropTypes.string,
     name: PropTypes.string,
     label: PropTypes.string.isRequired,
     labelPosition: PropTypes.oneOf(['left', 'right']),
+    checked: PropTypes.bool,
     disabled: PropTypes.bool,
     onChange: PropTypes.func,
     debug: PropTypes.bool
@@ -25,7 +26,7 @@ class Checkbox extends PureComponent {
     checked: false,
     disabled: false,
     debug: false,
-    value: false
+    value: false,
   }
 
   constructor(props) {
@@ -51,6 +52,7 @@ class Checkbox extends PureComponent {
 
   render() {
     const { 
+      id,
       name,
       label,
       labelPosition,
@@ -61,10 +63,14 @@ class Checkbox extends PureComponent {
     const { value } = this.state
 
     return (
-      <CheckboxStyle>
+      <CheckboxStyle 
+        htmlFor={id}
+        labelPosition={labelPosition}
+        disabled={disabled}
+      >
         <InputStyle
           type="checkbox"
-          id={label}
+          id={id}
           checked={value}
           value={value}
           name={name}
@@ -75,7 +81,7 @@ class Checkbox extends PureComponent {
         <BoxStyle labelPosition={labelPosition}>
           <CheckStyle>✓</CheckStyle>
         </BoxStyle>
-        <LabelStyle htmlFor={label}>{label}</LabelStyle>
+        {label}
       </CheckboxStyle>
     )
   }

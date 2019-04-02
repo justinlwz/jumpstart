@@ -2,19 +2,16 @@ import styled, { css } from 'styled-components'
 import { radius, transition, shadow } from '../../components/Styles/StyleUtils/Mixins.style'
 import { navActive, gray100, gray600, grayD00, grayF00 } from '../../components/Styles/StyleUtils/Colours.style'
 
-export const RadioStyle = styled.div`
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-`
-
 export const InputStyle = styled.input`
   top: 24px;
   position: absolute;
   display: ${props => props.debug ? "block" : "none"};
 `
 
-export const LabelStyle = styled.label`
+export const RadioStyle = styled.label`
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
   line-height: 24px;
   text-align: left;
   position: relative;
@@ -24,12 +21,13 @@ export const LabelStyle = styled.label`
   ${InputStyle}:checked ~ & {
     color: ${navActive};
   }
-  ${InputStyle}:disabled ~ & {
+  ${props => props.disabled && css`
     cursor: default;
     color: ${grayD00};
-    ~ ${CircleStyle} { 
+    ${CircleStyle} { 
       border-color: ${grayD00}; 
     }
+  `}
   }
 `
 

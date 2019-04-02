@@ -1,12 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { radius, transition } from '../../components/Styles/StyleUtils/Mixins.style'
 import { navActive, gray100, gray600, grayD00, grayF00 } from '../../components/Styles/StyleUtils/Colours.style'
-
-export const CheckboxStyle = styled.div`
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-`
 
 export const InputStyle = styled.input`
   top: 24px;
@@ -14,7 +8,10 @@ export const InputStyle = styled.input`
   display: ${props => props.debug ? "block" : "none"};
 `
 
-export const LabelStyle = styled.label`
+export const CheckboxStyle = styled.label`
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
   line-height: 24px;
   text-align: left;
   position: relative;
@@ -24,13 +21,13 @@ export const LabelStyle = styled.label`
   ${InputStyle}:checked ~ & {
     color: ${navActive};
   }
-  ${InputStyle}:disabled ~ & {
+  ${props => props.disabled && css`
     cursor: default;
     color: ${grayD00};
-    ~ ${BoxStyle} { 
+    ${BoxStyle} { 
       border-color: ${grayD00}; 
     }
-  }
+  `}
 `
 
 export const BoxStyle = styled.div`

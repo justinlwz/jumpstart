@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import {
   RadioStyle,
   InputStyle,
-  LabelStyle,
   CircleStyle,
   MarkStyle,
 } from './Radio.style'
@@ -12,9 +11,12 @@ import {
 class Radio extends PureComponent {
 
   static propTypes = {
+    id: PropTypes.string,
     name: PropTypes.string,
     label: PropTypes.string.isRequired,
     labelPosition: PropTypes.oneOf(['left', 'right']),
+    checked: PropTypes.bool,
+    value: PropTypes.bool,
     disabled: PropTypes.bool,
     onChange: PropTypes.func,
     debug: PropTypes.bool
@@ -25,7 +27,7 @@ class Radio extends PureComponent {
     checked: false,
     disabled: false,
     debug: false,
-    value: false
+    value: false,
   }
 
   constructor(props) {
@@ -51,20 +53,25 @@ class Radio extends PureComponent {
 
   render() {
     const { 
+      id, 
       name, 
-      label, 
+      label,
       labelPosition, 
       disabled, 
-      debug 
+      debug,
     } = this.props
 
     const { value } = this.state
 
     return (
-      <RadioStyle>
+      <RadioStyle 
+        htmlFor={id} 
+        labelPosition={labelPosition}
+        disabled={disabled}
+      >
         <InputStyle
           type="radio"
-          id={label}
+          id={id}
           checked={value}
           value={value}
           name={name}
@@ -75,9 +82,7 @@ class Radio extends PureComponent {
         <CircleStyle labelPosition={labelPosition}>
           <MarkStyle />
         </CircleStyle>
-        <LabelStyle htmlFor={label} labelPosition={labelPosition}>
-          {label}
-        </LabelStyle>
+        {label}
       </RadioStyle>
     )
   }
