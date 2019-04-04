@@ -1,14 +1,17 @@
 import React, { PureComponent } from 'react'
 import ReactSelect, { components } from 'react-select'
-import IconStyle from '../Icons/Icons.style'
+import styled from 'styled-components'
 
-const customStyles = {
-  control: (provided) => ({
-    ...provided,
-    width: 320,
-    height: 48,
-  }),
-}
+import IconStyle from '../Icons/Icons.style'
+import { grayD00 } from '../../components/Styles/StyleUtils/Colours.style'
+
+const SelectStyle = styled(ReactSelect)`
+  .react-select__control {
+    width: 320px;
+    height: 48px;
+    border-color: ${grayD00};
+  }
+`
 
 const DropdownIndicator = (props) => {
   return (
@@ -21,7 +24,6 @@ const DropdownIndicator = (props) => {
     </components.DropdownIndicator>
   )
 }
-
 
 class Select extends PureComponent {
 
@@ -42,10 +44,10 @@ class Select extends PureComponent {
     const { selectedOption } = this.state
 
     return (
-      <ReactSelect
+      <SelectStyle
+        classNamePrefix="react-select"
         icon={icon}
         colour={colour}
-        styles={customStyles}
         components={{ DropdownIndicator, IndicatorSeparator: null }}
         value={selectedOption}
         onChange={this.handleChange}
