@@ -47,5 +47,5 @@ yarn start
 | SVG              | Custom    | -                                                         |
 | Toggle           | Custom    | -                                                         |
 | Style Utils      | Custom    | -                                                         |
-| TODO: InputField | Custom    | -                                                         |
-| TODO: Dropdown   | Library   | [React Select](https://github.com/JedWatson/react-select) |
+| TODO: TextField  | Custom    | -                                                         |
+| Dropdown   | Library   | [React Select](https://github.com/JedWatson/react-select) |

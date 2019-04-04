@@ -2,35 +2,32 @@ import styled, { css } from 'styled-components'
 import { radius, transition, shadow } from '../Styles/StyleUtils/Mixins.style'
 import { navActive, gray100, grayD00, gray700 } from '../Styles/StyleUtils/Colours.style'
 
-export const ToggleStyle = styled.div`
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-`
-
 export const InputStyle = styled.input`
   top: 24px;
   position: absolute;
   display: ${props => props.debug ? "block" : "none"};
 `
 
-export const LabelStyle = styled.label`
+export const ToggleStyle = styled.label`
   line-height: 24px;
   text-align: left;
   position: relative;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
   color: ${gray100};
   ${transition({prop:'color', timing:'100ms'})}
   ${InputStyle}:checked ~ & {
     color: ${navActive};
   }
-  ${InputStyle}:disabled ~ & {
+  ${props => props.disabled && css`
     cursor: default;
     color: ${grayD00};
-    ~ ${FrameStyle} { 
+    ${FrameStyle} { 
       border-color: ${grayD00}; 
     }
-  }
+  `}
 `
 
 export const FrameStyle = styled.div`

@@ -4,7 +4,7 @@ export const IconStyle = styled.i`
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: ${props => props.size + 'px' || '24px'};
+  font-size: ${props => props.size || 24 + 'px'};
   display: inline-block;
   line-height: 1;
   text-transform: none;

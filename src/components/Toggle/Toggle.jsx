@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import {
   ToggleStyle,
   InputStyle,
-  LabelStyle,
   FrameStyle,
   KnobStyle,
 } from './Toggle.style'
@@ -62,7 +61,11 @@ class Toggle extends PureComponent {
 
     // Create Element
     return (
-      <ToggleStyle>
+      <ToggleStyle 
+        htmlFor={label} 
+        labelPosition={labelPosition}
+        disabled={disabled}
+      >
         <InputStyle
           type="checkbox"
           id={label}
@@ -76,7 +79,7 @@ class Toggle extends PureComponent {
         <FrameStyle labelPosition={label ? labelPosition : null}>
           <KnobStyle />
         </FrameStyle>
-        {label && <LabelStyle htmlFor={label}>{label}</LabelStyle>}
+        {label}
       </ToggleStyle>
     )
   }
