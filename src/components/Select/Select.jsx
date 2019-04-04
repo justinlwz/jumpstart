@@ -7,8 +7,10 @@ import { grayD00 } from '../../components/Styles/StyleUtils/Colours.style'
 
 const SelectStyle = styled(ReactSelect)`
   .react-select__control {
-    width: 320px;
-    height: 48px;
+    min-width: 320px;
+    max-width: 400px;
+    min-height: 48px;
+    border-radius: 0;
     border-color: ${grayD00};
   }
 `
