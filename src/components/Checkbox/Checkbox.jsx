@@ -5,7 +5,7 @@ import {
   CheckboxStyle,
   InputStyle,
   BoxStyle,
-  CheckStyle
+  CheckStyle,
 } from './Checkbox.style'
 
 class Checkbox extends PureComponent {
@@ -18,7 +18,7 @@ class Checkbox extends PureComponent {
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
     onChange: PropTypes.func,
-    debug: PropTypes.bool
+    debug: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -37,10 +37,12 @@ class Checkbox extends PureComponent {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.value !== prevProps.checked) {
-      this.setState({
-        value: prevProps.checked
-      })
+      this.updateValue(prevProps)
     }
+  }
+
+  updateValue(props) {
+    this.setState({ value: props.checked })
   }
 
   handleChange() {

@@ -35,7 +35,10 @@
     "no-unused-expressions": ["error", { "allowTernary": true }],
     "padded-blocks": "off",
     "semi": ["error", "never"],
+    "react/default-props-match-prop-types": "off",
+    "react/destructuring-assignment": "off",
     "react/forbid-prop-types": "warn",
-    "react/require-default-props": "off"
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
   }
 }

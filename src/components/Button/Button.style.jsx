@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { transition } from '../../components/Styles/StyleUtils/Mixins.style'
 import { nav, navActive, disabled } from '../../components/Styles/StyleUtils/Colours.style'
 
-const ButtonStyle = styled.button`
+export const ButtonStyle = styled.button`
   height: ${props => props.small ? "24px" : "32px"};
   font-size: ${props => props.small ? "12px" : "14px"};
   font-weight: 600;
@@ -44,5 +44,3 @@ const ButtonStyle = styled.button`
   `}
 
 `
-
-export default ButtonStyle

@@ -11,7 +11,7 @@ const options = [
 ];
 
 test('Select component', t => {
-  const component = <Select options={options} />
+  const component = <Select icon="keyboard_arrow_down" options={options} />
   const tree = render.create(component).toJSON()
   t.snapshot(tree)
 })

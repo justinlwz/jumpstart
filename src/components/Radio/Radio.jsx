@@ -38,10 +38,12 @@ class Radio extends PureComponent {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.value !== prevProps.checked) {
-      this.setState({
-        value: prevProps.checked
-      })
+      this.updateValue(prevProps)
     }
+  }
+
+  updateValue(props) {
+    this.setState({ value: props.checked })
   }
 
   handleChange() {

@@ -2,10 +2,10 @@ import test from 'ava'
 import React from 'react'
 import render from 'react-test-renderer'
 
-import { Icon } from '..'
+import { TextField } from '..'
 
-test('Icon component', t => {
-  const component = <Icon />
+test('TextField component', t => {
+  const component = <TextField />
   const tree = render.create(component).toJSON()
   t.snapshot(tree)
 })

@@ -2,12 +2,10 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import { 
-  ProgressBarStyle, 
-  BarStyle, 
-  TextStyle, 
-} from './ProgressBar.style'
+  TextFieldStyle 
+} from './TextField.style'
 
-class ProgressBar extends PureComponent {
+class TextField extends PureComponent {
 
   static propTypes = {
     mode: PropTypes.oneOf([
@@ -50,4 +48,4 @@ class ProgressBar extends PureComponent {
   }
 }
 
-export default ProgressBar
+export default TextField

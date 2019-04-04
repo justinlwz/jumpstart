@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import ButtonStyle from './Button.style'
+import { ButtonStyle } from './Button.style'
 
 
 class Button extends PureComponent {

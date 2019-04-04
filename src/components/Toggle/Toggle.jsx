@@ -16,7 +16,9 @@ class Toggle extends PureComponent {
     labelPosition: PropTypes.oneOf(['left', 'right']),
     disabled: PropTypes.bool,
     onChange: PropTypes.func,
-    debug: PropTypes.bool
+    debug: PropTypes.bool,
+    checked: PropTypes.bool,
+    value: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -35,10 +37,12 @@ class Toggle extends PureComponent {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.value !== prevProps.checked) {
-      this.setState({
-        value: prevProps.checked,
-      })
+      this.updateValue(prevProps)
     }
+  }
+
+  updateValue(props) {
+    this.setState({ value: props.checked })
   }
 
   handleChange() {
